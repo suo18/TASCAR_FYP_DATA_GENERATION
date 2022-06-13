@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<session name="demo" attribution="Omoke-Enyi Seth" duration="3.968" loop="true" playonload="true">
+	<scene name="main" guiscale="8">
+		<source name="female_TIMIT">
+			<!-- Adjust position of the female speaker -->
+			<position >
+				0   0.6  0  0.6
+			</position>
+			<sound>
+				<plugins>
+					<sndfile name="/Users/seth/Documents/TASCAR_FYP_DATA_GENERATION/SPEECH SOURCES/SA1_female_voice_1.WAV" 
+					loop="0" level="65" resample="true"/>
+			</plugins>
+			</sound>
+		</source>
+		<!-- Add reflecting surface-->
+		<face name="table" vertices="-0.5 1 0  -0.5 -1 0  0.5 -1 0  0.5 1 0"></face>
+		<!-- Add walls of a room-->
+		<!-- <facegroup name="room" reflectivity="2" damping="0" shoebox="6 7 3" color="2a00ff">
+			<position>0 0 0 0</position>
+		</facegroup> -->
+		<!-- Add reverb of room -->
+		<!-- <reverb name="reverb" type="simplefdn" volumetric="6 7 3" image="false">
+			<position>0 0.4 -0.75 1.5</position>
+		</reverb> -->
+		<!-- Add noise that fills the room -->
+		<diffuse name="cafeteria" size="1000 1000 1000"> 
+			<plugins>
+				<sndfile name="/Users/seth/Documents/TASCAR_FYP_DATA_GENERATION/SPEECH SOURCES/cafeteria_1_10-37_min_in-ear.wav" loop="0" level="70" channelorder="FuMa" resample="true"/>
+			</plugins> 
+		</diffuse>
+		<receiver name="head" type="hrtf">
+			<!-- Adjust position of the hrtf receiver(head) -->
+			<position>0 -0.7 0 0.5</position>
+		</receiver>
+	</scene>
+	<connect src="render.main:out_l" dest="system:playback_1" />
+	<connect src="render.main:out_r" dest="system:playback_2" />
+</session>

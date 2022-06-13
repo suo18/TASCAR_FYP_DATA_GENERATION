@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<session  attribution="Omoke-Enyi Seth" duration="{duration:.2f}" loop="true" playonload="true">
+	<scene name="kitchen" guiscale="8">
+
+	<source name="speaker">
+		<!-- Adjust position of the female speaker -->
+		<position >
+			0   10  10  1.8
+		</position>
+		<sound>
+			<plugins>
+				<sndfile name="{name}" 
+				loop="0" level="60" resample="true"/>
+		</plugins>
+		</sound>
+	</source>
+
+	<!-- Adjust position of the vacuum in the room, vacuum moves along floor so z never changes-->
+
+
+	<facegroup name="walls" color="#00ff80" shoebox="20 20 5"> 
+		<position>0 0 0 2.5</position>
+	</facegroup>
+
+	<!-- receiver walking towards speaker-->
+	{receiver}
+	</scene>
+
+	<!-- comment out the connect header at the end ? -->
+	<connect src="render.main:out_l" dest="system:playback_1" />
+	<connect src="render.main:out_r" dest="system:playback_2" />
+</session>

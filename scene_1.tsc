@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<session name="Session_Template" attribution="Omoke-Enyi Seth" duration="3.968" loop="true" playonload="true">
+	<scene name="main" guiscale="8">
+
+	<source name="female_TIMIT">
+    <!-- Adjust position of the female speaker -->
+    <position >
+        0  0  0.6  0.6
+    </position>
+    <sound>
+        <plugins>
+            <sndfile name="/Users/seth/Documents/TASCAR_FYP_DATA_GENERATION/SPEECH SOURCES/SA1_female_voice_1.WAV" 
+            loop="0" level="65" resample="true"/>
+    </plugins>
+    </sound>
+</source>
+
+	<!-- HRTF receiver -->
+<receiver name="hrtf" type="hrtf">
+
+<position importcsv="/Users/seth/Documents/TASCAR_FYP_DATA_GENERATION/position_scene1.csv"/>
+
+<orientation importcsv="/Users/seth/Documents/TASCAR_FYP_DATA_GENERATION/orientation_scene1.csv"/>
+
+</receiver>
+
+	</scene>
+
+	<!-- comment out the connect header at the end ? -->
+	<connect src="render.main:out_l" dest="system:playback_1" />
+	<connect src="render.main:out_r" dest="system:playback_2" />
+</session>

@@ -1,0 +1,11 @@
+    <source name="vacuum-cleaner">
+        <position>
+            0 {x} {y} 0
+        </position>
+        <sound>
+            <plugins>
+                <sndfile name="/Users/seth/Documents/TASCAR_FYP_DATA_GENERATION/SPEECH SOURCES/vacuum-cleaner-sound.wav" 
+                loop="0" level="65" resample="true"/>
+        </plugins>
+        </sound>
+    </source>	

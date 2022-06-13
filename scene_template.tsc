@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<session name="Session_Template" attribution="Omoke-Enyi Seth" duration="3.968" loop="true" playonload="true">
+	<scene name="main" guiscale="8">
+
+	{source}
+
+	{receiver}
+
+	</scene>
+
+	<!-- comment out the connect header at the end ? -->
+	<connect src="render.main:out_l" dest="system:playback_1" />
+	<connect src="render.main:out_r" dest="system:playback_2" />
+</session>

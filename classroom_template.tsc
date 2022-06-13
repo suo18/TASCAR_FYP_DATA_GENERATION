@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<session name="Classroom_Session_Template" attribution="Omoke-Enyi Seth" duration="{duration:.2f}" loop="true" playonload="true">
+	<scene name="session1" guiscale="8">
+
+	<source name="female_TIMIT_teacher">
+		<!-- Adjust position of the female speaker -->
+		<position >
+			0   0  -8.5  1.9
+		</position>
+		<sound>
+			<plugins>
+				<sndfile name="{name}" 
+				loop="0" level="60" resample="true"/>
+		</plugins>
+		</sound>
+	</source>
+
+
+	<face name="whiteboard" vertices="1.5 -10 0.8  1.5 -10 2.5  -1.5 -10 2.5   -1.5 -10 0.8" reflectivity="1.5" color="#ff0000"></face>
+
+	{student}
+
+
+	<facegroup name="walls" color="#00ff80" shoebox="20 20 5"> 
+		<position>0 0 0 2.5</position>
+	</facegroup>
+
+	<!-- Reverb same dimensions as room -->
+	<reverb name="reverb" type="simplefdn" absorption="0.16"  volumetric="20 20 5" image="False">
+		<position>
+			0 0 0 2.5
+		</position>
+	</reverb>
+
+	<!-- Add diffuse noise -->
+	<diffuse name="cafeteria" size="20 20 5" color="#0000ff"> 
+		<position>
+			0 0 0 2.5
+		</position>
+		<plugins>
+			<sndfile name="/Users/seth/Documents/TASCAR_FYP_DATA_GENERATION/SPEECH SOURCES/classroom.wav" loop="0" level="50" channelorder="FuMa" resample="true"/>
+		</plugins> 
+	</diffuse>
+
+	</scene>
+
+	<!-- comment out the connect header at the end ? -->
+	<connect src="render.main:out_l" dest="system:playback_1" />
+	<connect src="render.main:out_r" dest="system:playback_2" />
+</session>

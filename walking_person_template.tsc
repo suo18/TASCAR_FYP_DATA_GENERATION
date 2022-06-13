@@ -1,0 +1,5 @@
+<receiver name="out" type="omni">
+    <!-- Adjust position of the hrtf receiver(head) -->
+    <position>0 {x} {y} 1.6</position>
+    <orientation>0 45 0 0</orientation>
+</receiver>

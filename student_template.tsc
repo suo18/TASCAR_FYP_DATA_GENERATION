@@ -1,0 +1,8 @@
+<receiver name="student" type="omni">
+    <position>
+        0 {x} {y} {z} 
+    </position>
+    <orientation>
+        0 -90 0 0
+    </orientation>
+</receiver>

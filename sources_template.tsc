@@ -1,0 +1,12 @@
+<source name="female_TIMIT">
+    <!-- Adjust position of the female speaker -->
+    <position >
+        t  x  y  z
+    </position>
+    <sound>
+        <plugins>
+            <sndfile name="/Users/seth/Documents/TASCAR_FYP_DATA_GENERATION/SPEECH SOURCES/SA1_female_voice_1.WAV" 
+            loop="0" level="65" resample="true"/>
+    </plugins>
+    </sound>
+</source>
